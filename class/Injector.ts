@@ -4,7 +4,7 @@ import Foo from './Foo';
 import Bar from './Bar';
 
 export default class Injector {
-    public static injectMainHelper(applicationScope: ApplicationScope) {
+    public static injectMainHelper(applicationScope: ApplicationScope):MainHelper {
         return new MainHelper(this.getFilename(applicationScope), this.injectFoo());
     }
     public static injectBar():Bar {
