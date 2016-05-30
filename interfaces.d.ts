@@ -1,0 +1,3 @@
+interface IHelper {
+    run();
+}
