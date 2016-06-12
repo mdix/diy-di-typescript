@@ -2,7 +2,6 @@
 import ApplicationScope from './class/ApplicationScope';
 import Injector from './class/Injector';
 
-let applicationScope:ApplicationScope = new ApplicationScope();
-applicationScope.setArgs(['someFileName.extension']);
+let applicationScope:ApplicationScope = new ApplicationScope(['someFileName.extension']);
 let mainHelper:IHelper = Injector.injectMainHelper(applicationScope);
 mainHelper.run();

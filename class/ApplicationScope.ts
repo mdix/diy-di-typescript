@@ -1,9 +1,10 @@
 export default class ApplicationScope {
-    args:Array<any> = [];
-
-    setArgs(args:Array<any>) {
+    args:Array<String> = [];
+    
+    constructor(args) {
         this.args = args;
     }
+
     getArgs() {
         return this.args;
     }

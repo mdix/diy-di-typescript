@@ -1,5 +1,6 @@
 import MainHelper from './MainHelper';
 import ApplicationScope from './ApplicationScope';
+import ArgumentParser from './ArgumentParser';
 import Foo from './Foo';
 import Bar from './Bar';
 
@@ -13,7 +14,10 @@ export default class Injector {
     public static injectFoo():Foo {
         return new Foo(this.injectBar());
     }
+    public static injectArgumentParser(applicationScope: ApplicationScope):ArgumentParser {
+        return new ArgumentParser(applicationScope.getArgs());
+    }
     public static getFilename(applicationScope: ApplicationScope):String {
-        return applicationScope.getArgs()[0];
+        return this.injectArgumentParser(applicationScope).getArg(0);
     }
 }
